@@ -1,23 +1,13 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
+import sys
+import math
 
-using namespace std;
+# Auto-generated code below aims at helping you parse
+# the standard input according to the problem statement.
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
-int main()
-{
-    int n; // the number of temperatures to analyse
-    cin >> n; cin.ignore();
-    string temps; // the n temperatures expressed as integers ranging from -273 to 5526
-    getline(cin, temps);
+n = int(raw_input()) # the number of temperatures to analyse
+temps = raw_input() # the n temperatures expressed as integers ranging from -273 to 5526
 
-    // Write an action using cout. DON'T FORGET THE "<< endl"
-    // To debug: cerr << "Debug messages..." << endl;
+# Write an action using print
+# To debug: print >> sys.stderr, "Debug messages..."
 
-    cout << "result" << endl;
-}
+print "result"
