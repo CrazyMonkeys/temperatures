@@ -1,5 +1,6 @@
 import sys
 import math
+import re
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -15,8 +16,15 @@ for i in xrange(m):
 # To debug: print >> sys.stderr, "Debug messages..."
 
 class card:
-    def __init__(self,stringCard):
-    def isGreaterThan(self, iCard):
+    def __init__(self,iStringCard):
+    if re.match("2.",iStringCard):
+        pass
+    elif re.match("3.",iStringCard):
+        pass
+    def isStrictlyGreaterThan(self, iCard):
+        pass
+    def isAsStrongAs(self, iCard):
+        pass
 
 class player:
     def __init__(self,iCardSring): 
