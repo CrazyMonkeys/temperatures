@@ -7,7 +7,6 @@ import re
 
 
 class card:
-<<<<<<< HEAD
     def __init__(self,iStringCard):
     if re.match("2.",iStringCard):
         pass
@@ -16,11 +15,6 @@ class card:
     def isStrictlyGreaterThan(self, iCard):
         pass
     def isAsStrongAs(self, iCard):
-=======
-    def __init__(self,stringCard):
-        pass
-    def isGreaterThan(self, iCard):
->>>>>>> 3b909b06bdf26201352416b2608402c7219c0c06
         pass
 
 class player:
