@@ -72,7 +72,7 @@ class player:
         aCard = card(iStringCard)
         self.permananentCards.append(aCard)
         
-    def isEnoughCards(self, iCount): #Retruns if enough cards are left
+    def isEnoughCards(self, iCount): #Retruns if enough cards are left 
         return len(self.permananentCards) >= iCount
         
     def __repr__(self):
