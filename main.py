@@ -49,7 +49,7 @@ class player:
         pass
     def doDefausse(self): #puts 3 cards in the current, do not return vlau,remove from permanaent
         pass
-    def getLostCards(self): #returns the current cards and clean cureent
+    def getCurrent(self): #returns the current cards and clean cureent
         pass
     def addCards(self):
         pass
@@ -60,16 +60,28 @@ class manche:
     def __init__(self,iPlayer1, iPlayer2):
         self.player1 = iPlayer1
         self.player2 = iPlayer2
-        
+
     def playARound(self):
-        pass
+
+        card1 = self.player1.getNextCard()
+        card2 = self.player2.getNextCard()
+
+        if == :
+            self.playBataille()
+        elif 1>2: # Player 1 wins
+            self.echangeCards(self.player1, self.player2)
+        else: # Player 2 wins
+            self.echangeCards(self.player2, self.player1)
     def playBataille(self):
-        pass
-    def echangeCards(self):
-        pass
+
+    def echangeCards(self, winner, looser):
+        winner.getCurrent
     def run(self): #start the game
         pass
-    
+
+    def run(self): #start the game
+
+
 
 n = int(raw_input()) # the number of cards for player 1
 aPlayer1 = player("")
