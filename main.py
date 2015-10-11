@@ -8,14 +8,39 @@ import re
 
 class card:
     def __init__(self,iStringCard):
-    if re.match("2.",iStringCard):
-        pass
-    elif re.match("3.",iStringCard):
-        pass
+        if re.match("2.",iStringCard):
+            self.internal = 2
+        elif re.match("3.",iStringCard):
+            self.internal = 3
+        elif re.match("4.",iStringCard):
+            self.internal = 4
+        elif re.match("5.",iStringCard):
+            self.internal = 5
+        elif re.match("6.",iStringCard):
+            self.internal = 6
+        elif re.match("7.",iStringCard):
+            self.internal = 7
+        elif re.match("8.",iStringCard):
+            self.internal = 8
+        elif re.match("9.",iStringCard):
+            self.internal = 9
+        elif re.match("10.",iStringCard):
+            self.internal = 10
+        elif re.match("J.",iStringCard):
+            self.internal = 11
+        elif re.match("Q.",iStringCard):
+            self.internal = 12
+        elif re.match("K.",iStringCard):
+            self.internal = 13
+        elif re.match("A.",iStringCard):
+            self.internal = 14
+        else:
+            raise Exception("Wrong stringCard in card constructor")
+
     def isStrictlyGreaterThan(self, iCard):
-        pass
+        return self.internal > iCard.internal
     def isAsStrongAs(self, iCard):
-        pass
+        return self.internal == iCard.internal
 
 class player:
     def __init__(self): 
