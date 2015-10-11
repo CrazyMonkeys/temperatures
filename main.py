@@ -41,6 +41,10 @@ class card:
         return self.internal > iCard.internal
     def isAsStrongAs(self, iCard):
         return self.internal == iCard.internal
+    def __repr__(self):
+        return str(self.internal)
+    def __str__(self):
+        return self.__repr__()
 
 class player:
     def __init__(self): 
@@ -65,11 +69,18 @@ class player:
         return aCardsToGive
         
     def addCards(self,iStringCard):
-        aCard = card(StringCard)
+        aCard = card(iStringCard)
         self.permananentCards.append(aCard)
         
     def isEnoughCards(self, iCount): #Retruns if enough cards are left
         return len(self.permananentCards) >= iCount
+        
+    def __repr__(self):
+        aPermanent = ','.join([ i.__repr__() for i in self.permananentCards])
+        aCurrent = ','.join(self.currentCards)
+        return aPermanent+'\n'+aCurrent
+    def __str__(self):
+        return self.__repr__()
 
 class manche:
     def __init__(self,iPlayer1, iPlayer2):
@@ -97,13 +108,14 @@ class manche:
     def run(self): #start the game
 
 
-
 n = int(raw_input()) # the number of cards for player 1
-aPlayer1 = player("")
+aPlayer1 = player()
 for i in xrange(n):
     cardp_1 = raw_input() # the n cards of player 1
+    aPlayer1.addCards(cardp_1)
     print cardp_1
 m = int(raw_input()) # the number of cards for player 2
+print aPlayer1
 for i in xrange(m):
     cardp_2 = raw_input() # the m cards of player 2
 
