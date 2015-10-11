@@ -1,14 +1,20 @@
 import sys
 import math
+import re
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
 
 class card:
-    def __init__(self,stringCard):
+    def __init__(self,iStringCard):
+    if re.match("2.",iStringCard):
         pass
-    def isGreaterThan(self, iCard):
+    elif re.match("3.",iStringCard):
+        pass
+    def isStrictlyGreaterThan(self, iCard):
+        pass
+    def isAsStrongAs(self, iCard):
         pass
 
 class player:
