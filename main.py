@@ -12,16 +12,28 @@ class card:
         pass
 
 class player:
-    def __init__(self,iCardSring): 
-        pass
+    def __init__(self): 
+        self.permanenetCards = []
+        self.currentCards = []
+
     def getNextCard(self): #puts 1 cards in the current, retrun value,remove from permanaent
-        pass
+        aPlayingCard = None
+        if self.isEnoughCards(1):
+            aPlayingCard = self.permanenetCards.pop[0]
+            self.currentCards.append(aPlayingCard)
+        return aPlayingCard
+            
     def doDefausse(self): #puts 3 cards in the current, do not return vlau,remove from permanaent
-        pass
+        if self.isEnoughCards(3):
+            for i in xrange(3):
+                self.currentCards.append(self.permanenetCards.pop[0])
+        
     def getLostCards(self): #returns the current cards and clean cureent
         pass
-    def addCards(self):
-        pass
+    def addCaerds(self,iStringCard):
+        aCard = card(StringCard)
+        self.permanenetCards.append(aCard)
+        
     def isEnoughCards(self, iCount): #Retruns if enough cards are left
         pass
 
