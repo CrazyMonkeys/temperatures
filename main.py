@@ -60,24 +60,32 @@ class manche:
     def __init__(self,iPlayer1, iPlayer2):
         self.player1 = iPlayer1
         self.player2 = iPlayer2
-        self.isBataille = False
+        self.count = 0
 
     def playARound(self):
         card1 = self.player1.getNextCard()
         card2 = self.player2.getNextCard()
 
-        if card1.isAsStrongAs(card2):
-            # egality
-            self.isBataille = True
-            self.playBataille()
+        if self.player1.isEnoughCards(1) and self.player2.isEnoughCards(1):
+            # enough card to continue
+            if card1.isAsStrongAs(card2):
+                # egality
+                is_bataille_Possible = self.playBataille()
+                if not is_bataille_Possible:
+                    return "PAT"
 
-        elif card1.isStrictlyGreaterThan(card2):
-            # Player 1 wins
-            self.echangeCards(self.player1, self.player2)
+            elif card1.isStrictlyGreaterThan(card2):
+                # Player 1 wins
+                self.echangeCards(self.player1, self.player2)
 
-        else:
-            # Player 2 wins
-            self.echangeCards(self.player2, self.player1)
+            else:
+                # Player 2 wins
+                self.echangeCards(self.player2, self.player1)
+                
+        elif not self.player1.isEnoughCards(1):
+            return "1"
+        elif not self.player2.isEnoughCards(1):
+            return "2"
 
     def playBataille(self):
         if self.player1.isEnoughCards(4) and self.player2.isEnoughCards(4):
@@ -85,14 +93,22 @@ class manche:
             self.player2.doDefausse()
             self.playARound()
         else:
-            print "PAT"
+            return False
 
     def echangeCards(self, winner, looser):
         winner.addCards(winner.getCurrent())
         winner.addCards(looser.getCurrent())
 
     def run(self): #start the game
-        pass
+        while not winner:
+            self.count += 1
+            winner = self.playARound()
+
+        if winner == "PAT":
+            print "PAT"
+        else:
+            print winner + self.count
+
 
 
 n = int(raw_input()) # the number of cards for player 1
