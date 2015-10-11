@@ -19,30 +19,32 @@ class card:
 
 class player:
     def __init__(self): 
-        self.permanenetCards = []
+        self.permananentCards = []
         self.currentCards = []
 
     def getNextCard(self): #puts 1 cards in the current, retrun value,remove from permanaent
         aPlayingCard = None
         if self.isEnoughCards(1):
-            aPlayingCard = self.permanenetCards.pop[0]
+            aPlayingCard = self.permananentCards.pop[0]
             self.currentCards.append(aPlayingCard)
         return aPlayingCard
             
     def doDefausse(self): #puts 3 cards in the current, do not return vlau,remove from permanaent
         if self.isEnoughCards(3):
             for i in xrange(3):
-                self.currentCards.append(self.permanenetCards.pop[0])
-        
+                self.currentCards.append(self.permananentCards.pop[0])
 
     def getCurrent(self): #returns the current cards and clean cureent
-        pass
-    def addCaerds(self,iStringCard):
+        aCardsToGive = self.currentCards
+        self.currentCards = []
+        return aCardsToGive
+        
+    def addCards(self,iStringCard):
         aCard = card(StringCard)
-        self.permanenetCards.append(aCard)
+        self.permananentCards.append(aCard)
         
     def isEnoughCards(self, iCount): #Retruns if enough cards are left
-        pass
+        return len(self.permananentCards) >= iCount
 
 class manche:
     def __init__(self,iPlayer1, iPlayer2):
