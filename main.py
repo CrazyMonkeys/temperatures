@@ -35,27 +35,39 @@ class manche:
     def __init__(self,iPlayer1, iPlayer2):
         self.player1 = iPlayer1
         self.player2 = iPlayer2
+        self.isBataille = False
 
     def playARound(self):
-
         card1 = self.player1.getNextCard()
         card2 = self.player2.getNextCard()
 
-        if == :
+        if card1.isAsStrongAs(card2):
+            # egality
+            self.isBataille = True
             self.playBataille()
-        elif 1>2: # Player 1 wins
+
+        elif card1.isStrictlyGreaterThan(card2):
+            # Player 1 wins
             self.echangeCards(self.player1, self.player2)
-        else: # Player 2 wins
+
+        else:
+            # Player 2 wins
             self.echangeCards(self.player2, self.player1)
+
     def playBataille(self):
+        if self.player1.isEnoughCards(4) and self.player2.isEnoughCards(4):
+            self.player1.doDefausse()
+            self.player2.doDefausse()
+            self.playARound()
+        else:
+            print "PAT"
 
     def echangeCards(self, winner, looser):
-        winner.getCurrent
+        winner.addCards(winner.getCurrent())
+        winner.addCards(looser.getCurrent())
+
     def run(self): #start the game
         pass
-
-    def run(self): #start the game
-
 
 
 n = int(raw_input()) # the number of cards for player 1
