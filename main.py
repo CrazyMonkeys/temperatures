@@ -1,14 +1,20 @@
 import sys
 import math
+import re
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
 
 class card:
-    def __init__(self,stringCard):
+    def __init__(self,iStringCard):
+    if re.match("2.",iStringCard):
         pass
-    def isGreaterThan(self, iCard):
+    elif re.match("3.",iStringCard):
+        pass
+    def isStrictlyGreaterThan(self, iCard):
+        pass
+    def isAsStrongAs(self, iCard):
         pass
 
 class player:
@@ -28,7 +34,8 @@ class player:
             for i in xrange(3):
                 self.currentCards.append(self.permanenetCards.pop[0])
         
-    def getLostCards(self): #returns the current cards and clean cureent
+
+    def getCurrent(self): #returns the current cards and clean cureent
         pass
     def addCaerds(self,iStringCard):
         aCard = card(StringCard)
@@ -41,16 +48,28 @@ class manche:
     def __init__(self,iPlayer1, iPlayer2):
         self.player1 = iPlayer1
         self.player2 = iPlayer2
-        
+
     def playARound(self):
-        pass
+
+        card1 = self.player1.getNextCard()
+        card2 = self.player2.getNextCard()
+
+        if == :
+            self.playBataille()
+        elif 1>2: # Player 1 wins
+            self.echangeCards(self.player1, self.player2)
+        else: # Player 2 wins
+            self.echangeCards(self.player2, self.player1)
     def playBataille(self):
-        pass
-    def echangeCards(self):
-        pass
+
+    def echangeCards(self, winner, looser):
+        winner.getCurrent
     def run(self): #start the game
         pass
-    
+
+    def run(self): #start the game
+
+
 
 n = int(raw_input()) # the number of cards for player 1
 aPlayer1 = player("")
