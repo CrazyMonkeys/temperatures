@@ -18,7 +18,7 @@ class player:
         pass
     def doDefausse(self): #puts 3 cards in the current, do not return vlau,remove from permanaent
         pass
-    def getLostCards(self): #returns the current cards and clean cureent
+    def getCurrent(self): #returns the current cards and clean cureent
         pass
     def addCards(self):
         pass
@@ -43,8 +43,8 @@ class manche:
             self.echangeCards(self.player2, self.player1)
     def playBataille(self):
 
-    def echangeCards(self):
-        pass
+    def echangeCards(self, winner, looser):
+        winner.getCurrent
     def run(self): #start the game
         pass
 
